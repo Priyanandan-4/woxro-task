@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="h-auto w-full bg-[#331707]">
     <div className="w-full min-h-screen flex flex-col justify-center items-center relative px-4 bg-[#331707]">
-  <div className="absolute top-42 md:top-36  flex justify-center w-full">
+  <div className="absolute top-42 sm:top-1.5 md:top-36  flex justify-center w-full">
     <Image 
       src={icon} 
       alt="the website icon" 
@@ -31,7 +31,7 @@ export default function Home() {
     />
   </div>
   <div className="text-center mt-32 sm:mt-36 md:mt-44 lg:mt-48">
-    <h1 className="font-times text-2xl sm:text-3xl md:text-5xl  text-[#FFE9D9] leading-tight">
+    <h1 className="font-times text-[22px] sm:text-3xl md:text-5xl  text-[#FFE9D9] leading-tight">
       The first media company crafted <br />
       for the digital first generation.
     </h1>
