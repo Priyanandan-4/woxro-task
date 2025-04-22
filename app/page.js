@@ -4,6 +4,7 @@ import Lenis from "lenis";
 import { useEffect } from "react";
 import Image from "next/image";
 import icon from "@/public/images/icon.svg";
+import Cube from "@/components/cube";
 
 export default function Home() {
   useEffect(() => {
@@ -20,23 +21,46 @@ export default function Home() {
     };
   }, []);
 
+  // Common photos array for all cubes
+  const photos = [
+    '/images/image-one.jpeg',
+    '/images/image-two.jpeg',
+    '/images/image-three.jpeg',
+    '/images/image-four.jpeg',
+    '/images/image-five.jpeg',
+    '/images/image-six.jpeg',
+    // '/images/imageone.jpeg',
+  ];
+
   return (
-    <div className="h-auto w-full bg-[#331707]">
-    <div className="w-full min-h-screen flex flex-col justify-center items-center relative px-4 bg-[#331707]">
-  <div className="absolute top-42 sm:top-1.5 md:top-36  flex justify-center w-full">
-    <Image 
-      src={icon} 
-      alt="the website icon" 
-      className="w-80 h-80 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 object-contain"
-    />
-  </div>
-  <div className="text-center mt-32 sm:mt-36 md:mt-44 lg:mt-48">
-    <h1 className="font-times text-[22px] sm:text-3xl md:text-5xl  text-[#FFE9D9] leading-tight">
-      The first media company crafted <br />
-      for the digital first generation.
-    </h1>
-  </div>
-</div>
+    <div className="h-auto w-full bg-[#331707] relative">
+      {/* Six cubes arranged horizontally */}
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50 flex space-x-4">
+        {[...Array(6)].map((_, index) => (
+          <Cube
+            key={index}
+            size={150} // Reduced size to fit multiple cubes
+            rotationSpeed={0.02}
+            photos={photos}
+          />
+        ))}
+      </div>
+
+      <div className="w-full min-h-screen flex flex-col justify-center items-center relative px-4 bg-[#331707]">
+        <div className="absolute top-42 sm:top-1.5 md:top-36 flex justify-center w-full">
+          <Image
+            src={icon}
+            alt="the website icon"
+            className="w-80 h-80 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 object-contain"
+          />
+        </div>
+        <div className="text-center mt-32 sm:mt-36 md:mt-44 lg:mt-48">
+          <h1 className="font-times text-[22px] sm:text-3xl md:text-5xl text-[#FFE9D9] leading-tight">
+            The first media company crafted <br />
+            for the digital first generation.
+          </h1>
+        </div>
+      </div>
 
       <div className="flex items-center justify-center w-full min-h-screen text-center px-4 py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-[90vw] xs:max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-2xl mx-auto">
@@ -63,8 +87,9 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="w-full h-screen bg-amber-100 flex  justify-center items-center">
-<h1 className="text-shadow-amber-950 font-times text-2xl">NEXT SECTION</h1>
+
+      <div className="w-full h-screen bg-amber-100 flex justify-center items-center">
+        <h1 className="text-shadow-amber-950 font-times text-2xl">next section</h1>
       </div>
     </div>
   );
