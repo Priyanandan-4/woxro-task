@@ -1,103 +1,71 @@
+"use client";
+
+import Lenis from "lenis";
+import { useEffect } from "react";
 import Image from "next/image";
+import icon from "@/public/images/icon.svg";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  return (
+    <div className="h-auto w-full bg-[#331707]">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center relative px-4 bg-[#331707]">
+  <div className="absolute top-42 md:top-36  flex justify-center w-full">
+    <Image 
+      src={icon} 
+      alt="the website icon" 
+      className="w-80 h-80 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 object-contain"
+    />
+  </div>
+  <div className="text-center mt-32 sm:mt-36 md:mt-44 lg:mt-48">
+    <h1 className="font-times text-2xl sm:text-3xl md:text-5xl  text-[#FFE9D9] leading-tight">
+      The first media company crafted <br />
+      for the digital first generation.
+    </h1>
+  </div>
+</div>
+
+      <div className="flex items-center justify-center w-full min-h-screen text-center px-4 py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="max-w-[90vw] xs:max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-2xl mx-auto">
+          <h2 className="text-[#FFE9D9] text-lg sm:text-xl md:text-2xl lg:text-3xl font-times mb-4">
+            Where innovation meets precision.
+          </h2>
+          <p className="text-[#FFE9D9] text-sm xs:text-base sm:text-lg md:text-xl lg:text-[20px] font-times leading-relaxed">
+            <span className="inline md:hidden">
+              Symphonia unites visionary thinkers, creative architects and analytical experts, collaborating seamlessly
+              to transform challenges into opportunities. Together, we deliver tailored solutions that drive impact and
+              inspire growth.
+            </span>
+            <span className="hidden md:inline">
+              Symphonia unites visionary thinkers, creative architects
+              <br />
+              and analytical experts, collaborating seamlessly to
+              <br />
+              transform challenges into opportunities. Together, we
+              <br />
+              deliver tailored solutions that drive impact and inspire
+              <br />
+              growth.
+            </span>
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      <div className="w-full h-screen bg-amber-100 flex  justify-center items-center">
+<h1 className="text-shadow-amber-950 font-times text-2xl">NEXT SECTION</h1>
+      </div>
     </div>
   );
 }
