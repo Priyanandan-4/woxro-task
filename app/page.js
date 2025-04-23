@@ -78,6 +78,58 @@ const cubesData = {
   },
 }
 
+// Define unique image sets for each cube
+const cubeImageSets = {
+  "cube-1": [
+    "/images/cubeone/oneimg.jpg",
+    "/images/cubeone/twoimg.jpg",
+    "/images/cubeone/threeimg.jpg",
+    "/images/cubeone/fourimg.jpg",
+    "/images/cubeone/fiveimg.jpg",
+    "/images/cubeone/sixim.jpg",
+  ],
+  "cube-2": [
+    "/images/cubetwo/imageOne.jpeg",
+    "/images/cubetwo/imageTwo.jpeg",
+    "/images/cubetwo/imageThree.jpeg",
+    "/images/cubetwo/imageFour.jpeg",
+    "/images/cubetwo/imageFive.jpeg",
+    "/images/cubetwo/imagesiz.jpeg",
+  ],
+  "cube-3": [
+    "/images/cubethree/img1.jpeg",
+    "/images/cubethree/img2.jpeg",
+    "/images/cubethree/img3.jpeg",
+    "/images/cubethree/img4.jpeg",
+    "/images/cubethree/img5.jpeg",
+    "/images/cubethree/img6.jpeg",
+  ],
+  "cube-4": [
+    "/images/cubefour/oneimage.jpg",
+    "/images/cubefour/twoimage.jpg",
+    "/images/cubefour/threeimage.jpg",
+    "/images/cubefour/fourimage.jpg",
+    "/images/cubefour/fiveimage.jpg",
+    "/images/cubefour/siximage.jpg",
+  ],
+  "cube-5": [
+    "/images/cubefive/image-one.jpeg",
+    "/images/cubefive/image-two.jpeg",
+    "/images/cubefive/image-three.jpeg",
+    "/images/cubefive/image-four.jpeg",
+    "/images/cubefive/image-five.jpeg",
+    "/images/cubefive/image-six.jpeg",
+  ],
+  "cube-6": [
+    "/images/cubesix/one-img.jpg",
+    "/images/cubesix/two-img.jpg",
+    "/images/cubesix/three-img.jpg",
+    "/images/cubesix/four-img.jpg",
+    "/images/cubesix/five-img.jpg",
+    "/images/cubesix/six-img.jpg",
+  ],
+}
+
 export default function Home() {
   const containerRef = useRef(null)
   const stickyRef = useRef(null)
@@ -85,8 +137,6 @@ export default function Home() {
   const cubesContainerRef = useRef(null)
   const header1Ref = useRef(null)
   const header2Ref = useRef(null)
-  const aboutRef = useRef(null)
-  const hiSectionRef = useRef(null)
   const cubeRefs = useRef({})
 
   useEffect(() => {
@@ -201,35 +251,26 @@ export default function Home() {
     }
   }, [])
 
-  const cubeImages = [
-    "/images/imageOne.jpeg",
-    "/images/imageTwo.jpeg",
-    "/images/imageThree.jpeg",
-    "/images/imageFour.jpeg",
-    "/images/imageFive.jpeg",
-    "/images/imageSix.jpeg",
-  ]
-
   return (
     <div className="relative w-screen overflow-hidden">
-      <div ref={containerRef} className="h-[600vh] w-full bg-[#331707]">
+      <div ref={containerRef} className="h-auto bg-[#331707]">
         <section ref={stickyRef} className="sticky top-0 w-full h-screen bg-[#331707] text-[#FFE9D9] overflow-hidden">
           {/* Logo */}
           <div
             ref={logoRef}
-            className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-6 z-10"
+            className="absolute top-64 md:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-12 md:gap-6 z-10"
           >
             <div className="flex flex-col justify-end">
-              <div className="w-[35px] h-[35px] bg-[#FFE9D9] origin-bottom-right rotate-45"></div>
-              <div className="w-[35px] h-[35px] bg-[#FFE9D9]"></div>
+              <div className="w-[80px] h-[75px] md:w-[35px] md:h-[35px] bg-[#FFE9D9] origin-bottom-right rotate-45"></div>
+              <div className="w-[80px] h-[80px] md:w-[35px] md:h-[35px] bg-[#FFE9D9]"></div>
             </div>
-            <div className="flex flex-col justify-end gap-6">
-              <div className="w-[35px] h-[35px] bg-[#FFE9D9]"></div>
-              <div className="w-[35px] h-[35px] bg-[#FFE9D9]"></div>
+            <div className="flex flex-col justify-end gap-12 md:gap-6">
+              <div className="w-[80px] h-[80px] md:w-[35px] md:h-[35px] bg-[#FFE9D9]"></div>
+              <div className="w-[80px] h-[80px] md:w-[35px] md:h-[35px] bg-[#FFE9D9]"></div>
             </div>
             <div className="flex flex-col justify-end">
-              <div className="w-[35px] h-[35px] bg-[#FFE9D9] origin-bottom-left -rotate-45"></div>
-              <div className="w-[35px] h-[35px] bg-[#FFE9D9]"></div>
+              <div className="w-[80px] h-[80px] md:w-[35px] md:h-[35px] bg-[#FFE9D9] origin-bottom-left -rotate-45"></div>
+              <div className="w-[80px] h-[80px] md:w-[35px] md:h-[35px] bg-[#FFE9D9]"></div>
             </div>
           </div>
           {/* Cubes Container */}
@@ -242,7 +283,7 @@ export default function Home() {
               <Cube
                 key={cubeClass}
                 id={cubeClass}
-                images={cubeImages}
+                images={cubeImageSets[cubeClass]}
                 ref={(el) => (cubeRefs.current[cubeClass] = el)}
               />
             ))}
@@ -273,10 +314,9 @@ export default function Home() {
           </div>
         </section>
         {/* Spacer */}
-        <div className="w-screen h-[100vh] md:h-[200vh] bg-[#d0bcac] text-[#331707] relative  text-3xl md:text-7xl font-times flex justify-center overflow-hidden">
+        <div className="w-screen h-[100vh] bg-[#d0bcac] text-[#331707] relative text-3xl md:text-7xl font-times flex justify-center overflow-hidden">
           <h1 className="absolute top-[50%] md:top-80">next section</h1>
         </div>
-      
       </div>
     </div>
   )
