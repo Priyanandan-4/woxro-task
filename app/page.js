@@ -61,7 +61,7 @@ export default function Home() {
       })
 
       gsap.to(headingRef.current, {
-        scale: 1.1,
+        scale: 2.1,
         filter: "blur(8px)",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -77,7 +77,7 @@ export default function Home() {
           opacity: 0,
           filter: "blur(8px)",
         },
-        {
+        { 
           opacity: 1,
           filter: "blur(0px)",
           scrollTrigger: {
@@ -90,6 +90,7 @@ export default function Home() {
       )
 
       gsap.to(secondSectionRef.current, {
+        // scale: 0,
         opacity: 0,
         scrollTrigger: {
           trigger: containerRef.current,
