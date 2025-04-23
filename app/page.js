@@ -260,7 +260,7 @@ export default function Home() {
             ref={logoRef}
             className="absolute top-64 md:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-12 md:gap-6 z-10"
           >
-            <div className="flex flex-col justify-end">
+            <div className="flex flex-col justify-end    ">
               <div className="w-[80px] h-[75px] md:w-[35px] md:h-[35px] bg-[#FFE9D9] origin-bottom-right rotate-45"></div>
               <div className="w-[80px] h-[80px] md:w-[35px] md:h-[35px] bg-[#FFE9D9]"></div>
             </div>
