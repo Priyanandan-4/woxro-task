@@ -54,27 +54,27 @@ Cube.displayName = "Cube"
 const cubesData = {
   "cube-1": {
     initial: { top: -55, left: 37.5, rotateX: 360, rotateY: -360, rotateZ: -48, z: -30000 },
-    final: { top: 30, left: 15, rotateX: 0, rotateY: 3, rotateZ: 0, z: 0 },
+    final: { top: 18, left: 15, rotateX: 0, rotateY: 3, rotateZ: 0, z: 0 },
   },
   "cube-2": {
     initial: { top: -35, left: 32.5, rotateX: -360, rotateY: 360, rotateZ: 90, z: -30000 },
-    final: { top: 55, left: 25, rotateX: 1, rotateY: 2, rotateZ: 0, z: 0 },
+    final: { top: 42, left: 25, rotateX: 1, rotateY: 2, rotateZ: 0, z: 0 },
   },
   "cube-3": {
     initial: { top: -65, left: 50, rotateX: -360, rotateY: -360, rotateZ: -180, z: -30000 },
-    final: { top: 5, left: 25, rotateX: -1, rotateY: 2, rotateZ: 0, z: 0 },
+    final: { top: -8, left: 25, rotateX: -1, rotateY: 2, rotateZ: 0, z: 0 },
   },
   "cube-4": {
     initial: { top: -35, left: 50, rotateX: -360, rotateY: -360, rotateZ: -180, z: -30000 },
-    final: { top: 55, left: 75, rotateX: 1, rotateY: -2, rotateZ: 0, z: 0 },
+    final: { top: 42, left: 75, rotateX: 1, rotateY: -2, rotateZ: 0, z: 0 },
   },
   "cube-5": {
     initial: { top: -55, left: 62.5, rotateX: 360, rotateY: 360, rotateZ: -135, z: -30000 },
-    final: { top: 5, left: 75, rotateX: -1, rotateY: -2, rotateZ: 0, z: 0 },
+    final: { top: -8, left: 75, rotateX: -1, rotateY: -2, rotateZ: 0, z: 0 },
   },
   "cube-6": {
     initial: { top: -35, left: 67.5, rotateX: -180, rotateY: -360, rotateZ: -180, z: -30000 },
-    final: { top: 30, left: 85, rotateX: 0, rotateY: -3, rotateZ: 0, z: 0 },
+    final: { top: 18, left: 85, rotateX: 0, rotateY: -3, rotateZ: 0, z: 0 },
   },
 }
 
@@ -265,7 +265,7 @@ export default function Home() {
               <span className="block xs:inline sm:inline">Where innovation</span>{" "}
               <span className="block xs:block sm:inline">meets precision.</span>
             </h2>
-            <p className="font-serif text-base xs:text-base sm:text-lg md:text-xl font-light">
+            <p className="font-serif text-[12px] xs:text-base sm:text-lg md:text-xl font-light">
               Symphonia unites visionary thinkers, creative architects, and analytical experts, collaborating seamlessly
               to transform challenges into opportunities. Together, we deliver tailored solutions that drive impact and
               inspire growth.
@@ -273,8 +273,8 @@ export default function Home() {
           </div>
         </section>
         {/* Spacer */}
-        <div className="w-full h-[200vh] bg-[#d0bcac] text-[#331707] relative text-7xl font-times flex justify-center">
-          <h1 className="absolute top-80">next section</h1>
+        <div className="w-screen h-[100vh] md:h-[200vh] bg-[#d0bcac] text-[#331707] relative  text-3xl md:text-7xl font-times flex justify-center overflow-hidden">
+          <h1 className="absolute top-[50%] md:top-80">next section</h1>
         </div>
       
       </div>
